@@ -96,11 +96,7 @@ final class Init
 			jQuery(function($){
 				setTimeout( function(){
 					$( ".single_variation_wrap" ).on( "show_variation", function ( event, variation ) {
-						//alert( variation.variation_id );
-						//console.log( variation.variation_id );
 						var url = '<?php echo get_permalink($post->ID);?>';
-						//$('input.variation_id').change( function(){
-						//console.log('You just selected variation #' + variation.variation_id);
 						var attributes = [];
 						var allAttributesSet = true;
 						$('table.variations select').each(function() {
@@ -119,9 +115,6 @@ final class Init
 								var attributeSlug = val.id.replace('attribute_pa_','');
 								url = url +'?variation_id='+ variation.variation_id +'&'+attributeSlug+'=' + val.value;
 							});
-							//console.log('Relocating #' + variation.variation_id);
-							//window.location.replace(url);
-							//window.location.href = url;
 							window.history.pushState('', '',url);
 						}
 
